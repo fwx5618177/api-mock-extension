@@ -1,0 +1,25 @@
+{
+  "name": "api-mock-extension",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Intercept and modify API responses for flexible online mocking.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "less": "^4.2.0",
+    "typescript": "^4.5.2",
+    "vite": "^5.2.11"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

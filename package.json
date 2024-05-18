@@ -8,6 +8,9 @@
     "build": "vite build",
     "serve": "vite preview"
   },
+  "engines": {
+    "node": ">=17.0.0 || >=20.10.0"
+  },
   "devDependencies": {
     "@types/chrome": "^0.0.268",
     "@types/node": "^20.12.12",

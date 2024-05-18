@@ -6,11 +6,26 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "<all_urls>",
-    "storage"
+    "storage",
+    "tabs",
+    "activeTab",
+    "cookies",
+    "notifications",
+    "alarms",
+    "webNavigation",
+    "identity",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*",
+    "background",
+    "bookmarks",
+    "idle",
+    "clipboardRead",
+    "clipboardWrite"
   ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": "background.js",
+    "persistent": true
   },
   "host_permissions": [
     "<all_urls>"
@@ -22,20 +37,15 @@
       ],
       "js": [
         "content.js"
-      ]
+      ],
+      "css": [
+        "main.css"
+      ],
+      "run_at": "document_idle"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "index.html",
-    "default_icon": {
-      "16": "public/icons/icon16.png",
-      "48": "public/icons/icon48.png",
-      "128": "public/icons/icon128.png"
-    }
-  },
-  "icons": {
-    "16": "public/icons/icon16.png",
-    "48": "public/icons/icon48.png",
-    "128": "public/icons/icon128.png"
+    "default_title": "API Mock Extension"
   }
 }

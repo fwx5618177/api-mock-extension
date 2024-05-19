@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "API Mock Extension",
   "version": "1.0",
   "description": "Intercept and modify API responses for flexible online mocking.",
@@ -15,16 +15,17 @@
     "webNavigation",
     "identity",
     "contextMenus",
-    "http://*/*",
-    "https://*/*",
     "background",
     "bookmarks",
     "idle",
     "clipboardRead",
-    "clipboardWrite"
+    "clipboardWrite",
+    "proxy"
   ],
   "background": {
-    "scripts": "background.js",
+    "scripts": [
+      "background.js"
+    ],
     "persistent": true
   },
   "host_permissions": [
@@ -44,7 +45,7 @@
       "run_at": "document_idle"
     }
   ],
-  "action": {
+  "browser_action": {
     "default_popup": "index.html",
     "default_title": "API Mock Extension"
   }

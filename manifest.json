@@ -1,36 +1,30 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "API Mock Extension",
   "version": "1.0",
   "description": "Intercept and modify API responses for flexible online mocking.",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
     "storage",
     "tabs",
     "activeTab",
-    "cookies",
     "notifications",
     "alarms",
     "webNavigation",
     "identity",
     "contextMenus",
-    "background",
     "bookmarks",
     "idle",
     "clipboardRead",
     "clipboardWrite",
-    "proxy"
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
   ],
-  "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": true
-  },
   "host_permissions": [
     "<all_urls>"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -45,8 +39,25 @@
       "run_at": "document_idle"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "index.html",
     "default_title": "API Mock Extension"
+  },
+  "side_panel": {
+    "default_path": "index.html?view=sidebar",
+    "default_title": "API Mock Extension"
+  },
+  "optional_permissions": [
+    "proxy",
+    "cookies"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "blocklist",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
   }
 }
